@@ -17,7 +17,7 @@ class ItzamController extends Controller
 
         // return $request->all();
         $password = $request->password;
-        $send = Mail::to($request->correo)->bcc('alfredogalvan.91@gmail.com')->send(new UserPassword($password));
+        $send = Mail::to($request->correo)->bcc($request->correocc)->send(new UserPassword($password));
         return 'success';
 
 
